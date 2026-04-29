@@ -12,13 +12,16 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 import java.util.UUID;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.type.SqlTypes;
 
 // Entidade JPA gerenciada pelo Hibernate e persistida na tabela pix_customers.
 @Entity
 @Table(name = "pix_customers")
-
+@Getter
+@Setter
 public class Customer {
 
     // Chave primaria da entidade. O UUID e armazenado como CHAR(36) para compatibilidade com MySQL.
@@ -93,37 +96,5 @@ public class Customer {
     @PreUpdate
     void preUpdate() {
         updatedAt = LocalDateTime.now();
-    }
-
-    public UUID getId() {
-        return id;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public String getFullName() {
-        return fullName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
     }
 }
