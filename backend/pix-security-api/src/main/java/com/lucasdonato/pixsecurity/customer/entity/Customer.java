@@ -18,6 +18,7 @@ import org.hibernate.type.SqlTypes;
 // Entidade JPA gerenciada pelo Hibernate e persistida na tabela pix_customers.
 @Entity
 @Table(name = "pix_customers")
+
 public class Customer {
 
     // Chave primaria da entidade. O UUID e armazenado como CHAR(36) para compatibilidade com MySQL.
