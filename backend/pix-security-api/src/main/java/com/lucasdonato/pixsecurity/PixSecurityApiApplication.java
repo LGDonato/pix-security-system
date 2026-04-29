@@ -1,9 +1,9 @@
-package com.lucasdonato.pix_security;
+package com.lucasdonato.pixsecurity;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "com.lucasdonato")
 public class PixSecurityApiApplication {
 
 	public static void main(String[] args) {
