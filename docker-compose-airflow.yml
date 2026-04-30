@@ -1,0 +1,17 @@
+services:
+  airflow:
+    image: apache/airflow:2.9.3
+    container_name: pix-security-airflow
+    command: standalone
+    environment:
+      AIRFLOW__CORE__EXECUTOR: SequentialExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__WEBSERVER__EXPOSE_CONFIG: "true"
+      _PIP_ADDITIONAL_REQUIREMENTS: pandas pyarrow
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./data_pipeline:/opt/airflow/data_pipeline
+      - ./data:/opt/airflow/data
+    user: "${AIRFLOW_UID:-50000}:0"
