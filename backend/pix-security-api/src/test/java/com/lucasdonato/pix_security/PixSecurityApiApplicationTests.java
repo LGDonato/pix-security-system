@@ -1,4 +1,4 @@
-package com.lucasdonato.pix_security;
+package com.lucasdonato.pixsecurity;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
